@@ -32,7 +32,27 @@
        </item>
        <item>
         <property name="text">
-         <string>Questionmark item block</string>
+         <string>Mushroom</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Coin</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Star</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Hidden</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Questionmark</string>
         </property>
        </item>
        <item>
@@ -42,7 +62,7 @@
        </item>
        <item>
         <property name="text">
-         <string>Solid block</string>
+         <string>Hard</string>
         </property>
        </item>
       </widget>
@@ -61,7 +81,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="row_SpinBox"/>
+        <widget class="QSpinBox" name="row_SpinBox">
+         <property name="maximum">
+          <number>500</number>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -75,7 +99,11 @@
         </widget>
        </item>
        <item>
-        <widget class="QSpinBox" name="column_SpinBox"/>
+        <widget class="QSpinBox" name="column_SpinBox">
+         <property name="maximum">
+          <number>500</number>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>

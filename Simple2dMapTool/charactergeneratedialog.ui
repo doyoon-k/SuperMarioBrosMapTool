@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CharacterGenerateDialog</class>
+ <widget class="QDialog" name="CharacterGenerateDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>484</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="character_Type_label">
+       <property name="text">
+        <string>Character Type</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="character_Type_listWidget">
+       <item>
+        <property name="text">
+         <string>Mario</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Gumba</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Green Koopa Troopa</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Red Koopa Troopa</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="character_Generate_pushButton">
+     <property name="text">
+      <string>Generate</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

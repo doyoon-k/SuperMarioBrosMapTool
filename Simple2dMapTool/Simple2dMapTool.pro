@@ -27,20 +27,38 @@ CONFIG += c++11
 SOURCES += \
         block.cpp \
         blockgeneratedialog.cpp \
+        character.cpp \
+        charactergeneratedialog.cpp \
+        environmentgeneratedialog.cpp \
+        item.cpp \
+        itemgeneratedialog.cpp \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        mapscreen.cpp
 
 HEADERS += \
         block.h \
         blockgeneratedialog.h \
+        character.h \
+        charactergeneratedialog.h \
         constants.h \
-        mainwindow.h
+        environmentgeneratedialog.h \
+        item.h \
+        itemgeneratedialog.h \
+        mainwindow.h \
+        mapscreen.h
 
 FORMS += \
         blockgeneratedialog.ui \
+        charactergeneratedialog.ui \
+        environmentgeneratedialog.ui \
+        itemgeneratedialog.ui \
         mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resources.qrc

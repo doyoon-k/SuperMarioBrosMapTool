@@ -9,17 +9,14 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-    p_bgImgObject(new QImage)
+    p_mapScene(new QGraphicsScene)
 {
     ui->setupUi(this);
-    p_mapScene = new QGraphicsScene(this);
-
+    ui->mapScreen->set_p_mw(this);
     //must set scene rect boundary...
-    ui->graphicsView->setScene(p_mapScene);
-    ui->graphicsView->setAlignment(Qt::AlignTop|Qt::AlignLeft);
-
-    vBlocks.reserve(200);
-    vTmpItems.reserve(50);
+    ui->mapScreen->setScene(p_mapScene);
+    ui->mapScreen->set_p_MapScene(p_mapScene);
+    ui->mapScreen->setAlignment(Qt::AlignTop|Qt::AlignLeft);
 }
 
 MainWindow::~MainWindow()
@@ -30,16 +27,6 @@ MainWindow::~MainWindow()
 QGraphicsScene *MainWindow::getGraphicsScene() const
 {
     return p_mapScene;
-}
-
-QVector<QGraphicsItem*> &MainWindow::getvTmpItems()
-{
-    return vTmpItems;
-}
-
-QVector<Block *> &MainWindow::getvBlocks()
-{
-    return vBlocks;
 }
 
 void MainWindow::on_set_Background_Button_clicked()
@@ -53,65 +40,81 @@ void MainWindow::on_set_Background_Button_clicked()
         return;
     }
 
-    p_bgImgObject->load(imgPath);
+    QImage*& imgObj = ui->mapScreen->getBackgroundImageObject();
+    imgObj->load(imgPath);
+
     QPixmap imgPixmap;
-    imgPixmap = QPixmap::fromImage(*p_bgImgObject);
+    imgPixmap = QPixmap::fromImage(*imgObj);
+
+    QGraphicsPixmapItem*& bgImgItem = ui->mapScreen->getBackgroundPixmapItem();
 
     //if the image already exists,
-    if(p_bgImage != nullptr)
+    if(bgImgItem != nullptr)
     {
-        p_mapScene->removeItem(p_bgImage);
+        p_mapScene->removeItem(bgImgItem);
     }
     //add loaded background pixmap and set QGraphicPixmapItem.
-    p_bgImage = p_mapScene->addPixmap(imgPixmap);
-    p_bgImage->setOpacity(0.5);
+    bgImgItem = p_mapScene->addPixmap(imgPixmap);
+    bgImgItem->setOpacity(0.4);
     p_mapScene->setSceneRect(0,0,imgPixmap.width(),imgPixmap.height());
 }
 
 void MainWindow::on_background_OnOff_Button_clicked()
 {
-    if(p_bgImage == nullptr)
+    QGraphicsItem* bgImgItem = ui->mapScreen->getBackgroundPixmapItem();
+    if(bgImgItem == nullptr)
         return;
 
-    if(p_bgImage->isVisible() == true)
+    if(bgImgItem->isVisible() == true)
     {
-        p_bgImage->hide();
+        bgImgItem->hide();
     }
     else
     {
-        p_bgImage->show();
+        bgImgItem->show();
     }
+    qDebug()<<"!";
 }
-
-void MainWindow::MainWindow::wheelEvent(QWheelEvent *event)
-{
-    if(p_bgImage == nullptr)
-        return;
-    qreal width = p_bgImage->boundingRect().width();
-    qreal height = p_bgImage->boundingRect().height();
-
-    p_bgImage->setScale(p_bgImage->scale()+event->delta()/100.0);
-    qreal bgImgScale = p_bgImage->scale();
-
-    p_mapScene->setSceneRect(0,0,width*bgImgScale,height*bgImgScale);
-}
-
-
 
 void MainWindow::on_addBlock_Button_clicked()
 {
+    QGraphicsPixmapItem* p_bgImage = ui->mapScreen->getBackgroundPixmapItem();
     if(p_bgImage == nullptr)
     {
         QMessageBox::information(this,"Background is not set.","You need to set the background first!");
         return;
     }
-    p_blockGenerateDialog = new BlockGenerateDialog(this);
+    p_blockGenerateDialog = new BlockGenerateDialog(this,ui->mapScreen,p_mapScene);
     p_blockGenerateDialog->setWindowTitle("Block Generator");
     p_blockGenerateDialog->setModal(true);
     p_blockGenerateDialog->show();
 }
 
-void MainWindow::MainWindow::mouseMoveEvent(QMouseEvent *event)
+void MainWindow::on_add_Item_pushButton_clicked()
 {
+    QGraphicsPixmapItem* p_bgImage = ui->mapScreen->getBackgroundPixmapItem();
+    if(p_bgImage == nullptr)
+    {
+        QMessageBox::information(this,"Background is not set.","You need to set the background first!");
+        return;
+    }
+    p_ItemGenerateDialog = new ItemGenerateDialog(this,ui->mapScreen,p_mapScene);
+    p_ItemGenerateDialog->setWindowTitle("Item Generator");
+    p_ItemGenerateDialog->setModal(true);
+    p_ItemGenerateDialog->show();
+}
+
+void MainWindow::on_add_Character_pushButton_clicked()
+{
+    QGraphicsPixmapItem* p_bgImage = ui->mapScreen->getBackgroundPixmapItem();
+    if(p_bgImage == nullptr)
+    {
+        QMessageBox::information(this,"Background is not set.","You need to set the background first!");
+        return;
+    }
+    p_characterGenerateDialog = new CharacterGenerateDialog(this,ui->mapScreen,p_mapScene);
+    p_characterGenerateDialog->setWindowTitle("Character Generator");
+    p_characterGenerateDialog->setModal(true);
+    p_characterGenerateDialog->show();
 
 }

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>933</width>
-    <height>370</height>
+    <width>854</width>
+    <height>430</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -45,10 +45,31 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="add_Item_pushButton">
+        <property name="text">
+         <string>Add Item</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="add_Character_pushButton">
+        <property name="text">
+         <string>Add Character</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </item>
     <item>
-     <widget class="QGraphicsView" name="graphicsView"/>
+     <widget class="MapScreen" name="mapScreen">
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -57,7 +78,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>933</width>
+     <width>854</width>
      <height>21</height>
     </rect>
    </property>
@@ -73,6 +94,13 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>MapScreen</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">mapscreen.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
