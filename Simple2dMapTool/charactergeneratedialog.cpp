@@ -17,20 +17,7 @@ CharacterGenerateDialog::~CharacterGenerateDialog()
 }
 
 void CharacterGenerateDialog::on_character_Generate_pushButton_clicked()
-{/*
-    itemType = ui->item_Type_listWidget->currentItem()->text();
-    QVector<QGraphicsItem*>& vTmpItems = p_mapScreen->getvTmpItems();
-    qreal scale = p_mapScreen->getAccumulatedScale();
-    QPen blockPen(Qt::black);
-    int one_block_length = MainWindow::one_block_length;
-
-    QGraphicsItem* item = p_mapScene->addRect(0,0,one_block_length,one_block_length);
-    item->setScale(scale);
-    item->setPos(0,0);
-    vTmpItems.push_back(item);
-
-    p_mapScreen->setTmpItemType(CURRENT_TMP_ITEM::item,itemType);
-    this->close();*/
+{
     characterType = ui->character_Type_listWidget->currentItem()->text();
     QVector<QGraphicsItem*>& vTmpItems = p_mapScreen->getvTmpItems();
     qreal scale = p_mapScreen->getAccumulatedScale();

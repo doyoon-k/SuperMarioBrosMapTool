@@ -18,5 +18,19 @@
         <file>Img/Coin Block.png</file>
         <file>Img/Mushroom Block.png</file>
         <file>Img/Star Block.png</file>
+        <file>Img/Bush1.png</file>
+        <file>Img/Bush2.png</file>
+        <file>Img/Bush3.png</file>
+        <file>Img/Cloud1.png</file>
+        <file>Img/Cloud2.png</file>
+        <file>Img/Cloud3.png</file>
+        <file>Img/Flag.png</file>
+        <file>Img/Lift.png</file>
+        <file>Img/Piranha Plant Pipe.png</file>
+        <file>Img/Castle.png</file>
+        <file>Img/Pipe Body Hor.png</file>
+        <file>Img/Pipe Body Ver.png</file>
+        <file>Img/Pipe Head Hor.png</file>
+        <file>Img/Pipe Head Ver.png</file>
     </qresource>
 </RCC>

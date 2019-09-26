@@ -63,6 +63,13 @@ void MapScreen::wheelEvent(QWheelEvent *event)
         qreal y = character->y();
         character->setPos(x*newScale,y*newScale);
     }
+    for(auto environment : vEnvironments)
+    {
+        environment->setScale(environment->scale()*newScale);
+        qreal x = environment->x();
+        qreal y = environment->y();
+        environment->setPos(x*newScale,y*newScale);
+    }
 }
 
 void MapScreen::mouseMoveEvent(QMouseEvent *event)
@@ -186,6 +193,58 @@ void MapScreen::mousePressEvent(QMouseEvent *event)
             }
             break;
         case environments:
+            if(tmpItemName == "Pirhana Plant Pipe")
+            {
+                addEnvironments("Pirhana Plant Pipe",QPixmap(":/Img/Img/Piranha Plant Pipe.png"));
+            }
+            else if(tmpItemName == "Pipe Head(Horizontal)")
+            {
+                addEnvironments("Pipe Head Horizontal",QPixmap(":/Img/Img/Pipe Head Hor.png"));
+            }
+            else if(tmpItemName == "Pipe Head(Vertical)")
+            {
+                addEnvironments("Pipe Head Vertical",QPixmap(":/Img/Img/Pipe Head Ver.png"));
+            }
+            else if(tmpItemName == "Pipe Body(Horizontal)")
+            {
+                addEnvironments("Pipe Body Horizontal",QPixmap(":/Img/Img/Pipe Body Hor.png"));
+            }
+            else if(tmpItemName == "Pipe Body(Vertical)")
+            {
+                addEnvironments("Pipe Body Vertical",QPixmap(":/Img/Img/Pipe Body Ver.png"));
+            }
+            else if(tmpItemName == "Flag")
+            {
+                addEnvironments("Flag",QPixmap(":/Img/Img/Flag.png"));
+            }
+            else if(tmpItemName == "Cloud1")
+            {
+                addEnvironments("Cloud1",QPixmap(":/Img/Img/Cloud1.png"));
+            }
+            else if(tmpItemName == "Cloud2")
+            {
+                addEnvironments("Cloud2",QPixmap(":/Img/Img/Cloud2.png"));
+            }
+            else if(tmpItemName == "Cloud3")
+            {
+                addEnvironments("Cloud3",QPixmap(":/Img/Img/Cloud3.png"));
+            }
+            else if(tmpItemName == "Bush1")
+            {
+                addEnvironments("Bush1",QPixmap(":/Img/Img/Bush1.png"));
+            }
+            else if(tmpItemName == "Bush2")
+            {
+                addEnvironments("Bush2",QPixmap(":/Img/Img/Bush2.png"));
+            }
+            else if(tmpItemName == "Bush3")
+            {
+                addEnvironments("Bush3",QPixmap(":/Img/Img/Bush3.png"));
+            }
+            else if(tmpItemName == "Castle")
+            {
+                addEnvironments("Castle",QPixmap(":/Img/Img/Castle.png"));
+            }
             break;
         default:
             break;
@@ -257,6 +316,20 @@ void MapScreen::addCharacters(const QString &name, const QPixmap &image)
         character->setObjectName(name);
         vCharacters.push_back(character);
         p_mapScene->addItem(character);
+        p_mapScene->removeItem(tmpItem);
+    }
+}
+
+void MapScreen::addEnvironments(const QString &name, const QPixmap &image)
+{
+    for(auto tmpItem : vTmpItems)
+    {
+        Environment* environment = new Environment(name,image);
+        environment->setPos(tmpItem->pos());
+        environment->setScale(tmpItem->scale());
+        environment->setObjectName(name);
+        vEnvironments.push_back(environment);
+        p_mapScene->addItem(environment);
         p_mapScene->removeItem(tmpItem);
     }
 }

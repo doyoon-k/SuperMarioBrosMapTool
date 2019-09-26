@@ -1,16 +1,16 @@
-#ifndef CHARACTER_H
-#define CHARACTER_H
+#ifndef ENVIRONMENT_H
+#define ENVIRONMENT_H
 
 #include <QWidget>
 #include <QGraphicsObject>
 
-class Character : public QGraphicsObject
+class Environment:public QGraphicsObject
 {
 public:
-    Character();
-    Character(const QString& type, const QPixmap& img, QGraphicsItem* parent = nullptr);
-    Character(const Character& other);
-    Character& operator= (const Character& other);
+    Environment();
+    Environment(const QString& type,const QPixmap& img, QGraphicsItem* parent = nullptr);
+    Environment(const Environment& other);
+    Environment& operator= (const Environment& other);
 private:
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr)override;
@@ -19,8 +19,8 @@ private:
 //    void mouseReleaseEvent(QGraphicsSceneMouseEvent* event)override;
     QRectF boundingRect()const override;
 
-    QString CharacterType = "";
+    QString EnvironmentType = "";
     QPixmap image;
 };
 
-#endif // CHARACTER_H
+#endif // ENVIRONMENT_H

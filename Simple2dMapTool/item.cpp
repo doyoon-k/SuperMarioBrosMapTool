@@ -21,16 +21,6 @@ Item::Item(const Item &other)
 
 }
 
-void Item::setPosition(const QPointF &point)
-{
-    QGraphicsObject::setPos(point);
-}
-
-void Item::setScale(qreal scale)
-{
-    QGraphicsObject::setScale(scale);
-}
-
 void Item::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 

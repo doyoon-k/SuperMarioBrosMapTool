@@ -7,6 +7,7 @@
 #include "block.h"
 #include "item.h"
 #include "character.h"
+#include "environment.h"
 
 using namespace std;
 
@@ -34,6 +35,7 @@ private:
     void addBlocks(const QString& name,const QPixmap& image);
     void addItems(const QString& name,const QPixmap& image);
     void addCharacters(const QString& name, const QPixmap& image);
+    void addEnvironments(const QString& name,const QPixmap& image);
 
     QGraphicsPixmapItem* p_bgImageItem = nullptr;
     QImage* p_bgImgObject = nullptr;
@@ -42,6 +44,7 @@ private:
     QVector<Block*> vBlocks;
     QVector<Item*> vItems;
     QVector<Character*> vCharacters;
+    QVector<Environment*> vEnvironments;
     //item QVector
     //character QVector
     static qreal accumulatedScale;

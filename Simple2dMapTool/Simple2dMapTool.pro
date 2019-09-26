@@ -29,6 +29,7 @@ SOURCES += \
         blockgeneratedialog.cpp \
         character.cpp \
         charactergeneratedialog.cpp \
+        environment.cpp \
         environmentgeneratedialog.cpp \
         item.cpp \
         itemgeneratedialog.cpp \
@@ -42,6 +43,7 @@ HEADERS += \
         character.h \
         charactergeneratedialog.h \
         constants.h \
+        environment.h \
         environmentgeneratedialog.h \
         item.h \
         itemgeneratedialog.h \

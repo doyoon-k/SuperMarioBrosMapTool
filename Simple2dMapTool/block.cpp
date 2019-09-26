@@ -31,17 +31,6 @@ Block &Block::operator=(const Block &other)
     return *this;
 }
 
-
-void Block::setPosition(const QPointF &point)
-{
-    setPos(point);
-}
-
-void Block::setScale(qreal scale)
-{
-    QGraphicsObject::setScale(scale);
-}
-
 void Block::setbIsContainingItem(bool val)
 {
     bIsContainingItem = val;

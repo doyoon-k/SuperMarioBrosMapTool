@@ -15,8 +15,6 @@ public:
     Block()
         :image(QPixmap(":/Img/Img/BrickBlock.png"))
     {}
-    void setPosition(const QPointF& point);
-    void setScale(qreal scale);
     void setbIsContainingItem(bool val);
     void setItemType(const QString& itemType);
 private:

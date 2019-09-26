@@ -10,6 +10,7 @@
 #include "blockgeneratedialog.h"
 #include "itemgeneratedialog.h"
 #include "charactergeneratedialog.h"
+#include "environmentgeneratedialog.h"
 #include "block.h"
 #include "constants.h"
 
@@ -38,11 +39,16 @@ private slots:
 
     void on_add_Character_pushButton_clicked();
 
+    void on_add_Environment_pushButton_clicked();
+
+    void on_save_Map_Button_clicked();
+
 private:
     Ui::MainWindow *ui;
     BlockGenerateDialog* p_blockGenerateDialog = nullptr;
     ItemGenerateDialog* p_ItemGenerateDialog = nullptr;
     CharacterGenerateDialog* p_characterGenerateDialog = nullptr;
+    EnvironmentGenerateDialog* p_environmentGenerateDialog = nullptr;
     QGraphicsScene* p_mapScene = nullptr;
 };
 

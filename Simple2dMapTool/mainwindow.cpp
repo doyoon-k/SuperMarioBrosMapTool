@@ -118,3 +118,23 @@ void MainWindow::on_add_Character_pushButton_clicked()
     p_characterGenerateDialog->show();
 
 }
+
+void MainWindow::on_add_Environment_pushButton_clicked()
+{
+    QGraphicsPixmapItem* p_bgImage = ui->mapScreen->getBackgroundPixmapItem();
+    if(p_bgImage == nullptr)
+    {
+        QMessageBox::information(this,"Background is not set.","You need to set the background first!");
+        return;
+    }
+
+    p_environmentGenerateDialog = new EnvironmentGenerateDialog(this,ui->mapScreen,p_mapScene);
+    p_environmentGenerateDialog->setWindowTitle("Environment Generator");
+    p_environmentGenerateDialog->setModal(true);
+    p_environmentGenerateDialog->show();
+}
+
+void MainWindow::on_save_Map_Button_clicked()
+{
+
+}
