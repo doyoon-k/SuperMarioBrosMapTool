@@ -32,7 +32,7 @@ QGraphicsScene *MainWindow::getGraphicsScene() const
 void MainWindow::on_set_Background_Button_clicked()
 {
     //open file explorer to select the image file.
-    QString imgPath = QFileDialog::getOpenFileName(this,"Choose an image file to open.","C://","JPEG(*.jpg *.jpeg);;PNG (*.png)");
+    QString imgPath = QFileDialog::getOpenFileName(this,"Choose an image file to open.","C://","PNG (*.png);;JPEG(*.jpg *.jpeg)");
 
     if(imgPath == nullptr)
     {
@@ -136,5 +136,17 @@ void MainWindow::on_add_Environment_pushButton_clicked()
 
 void MainWindow::on_save_Map_Button_clicked()
 {
+   QString saveFolderPath = QFileDialog::getExistingDirectory(this,"Choose a file to save the data.","C://");
+   QFile saveFile(saveFolderPath);;
 
+   if(saveFolderPath == "")
+   {
+       QMessageBox::information(this,"No folder selected.","You didn't select any folder.");
+       return;
+   }
+
+   QJsonObject mapData;
+   //code of writing on mapData
+   QJsonDocument saveDoc(mapData);
+   saveFile.write(saveDoc.toJson());
 }
