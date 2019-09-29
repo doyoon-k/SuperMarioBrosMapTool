@@ -28,6 +28,7 @@ public:
     QImage*& getBackgroundImageObject();
     static qreal getAccumulatedScale();
     void setTmpItemType(int type,const QString& name);
+    void writeMapDataToJsonObject(QJsonObject& json);
 private:
     void wheelEvent(QWheelEvent* event);
     void mouseMoveEvent(QMouseEvent *event);

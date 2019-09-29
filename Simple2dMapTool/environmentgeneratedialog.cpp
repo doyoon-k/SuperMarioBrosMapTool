@@ -81,6 +81,10 @@ void EnvironmentGenerateDialog::on_generate_pushButton_clicked()
     {
         item = p_mapScene->addRect(0,0,one_block_length*3,one_block_length);
     }
+    else if(environmentType == "Mountain")
+    {
+        item = p_mapScene->addRect(0,0,one_block_length*5,one_block_length*3);
+    }
 
     item->setScale(scale);
     item->setPos(0,0);

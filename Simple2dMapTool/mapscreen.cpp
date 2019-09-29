@@ -47,7 +47,7 @@ void MapScreen::wheelEvent(QWheelEvent *event)
         qreal x = block->x();
         qreal y = block->y();
         block->setPos(x*newScale,y*newScale);
-//        qDebug()<<block->pos()/accumulatedScale;
+        qDebug()<<block->pos()/accumulatedScale;
     }
     for(auto item : vItems)
     {
@@ -245,6 +245,10 @@ void MapScreen::mousePressEvent(QMouseEvent *event)
             {
                 addEnvironments("Castle",QPixmap(":/Img/Img/Castle.png"));
             }
+            else if(tmpItemName == "Mountain")
+            {
+                addEnvironments("Mountain",QPixmap(":/Img/Img/Mountain.png"));
+            }
             break;
         default:
             break;
@@ -373,4 +377,75 @@ void MapScreen::setTmpItemType(int type,const QString& name)
 {
     tmpItempType = type;
     tmpItemName = name;
+}
+
+void MapScreen::writeMapDataToJsonObject(QJsonObject &json)
+{
+    QJsonArray blocks;
+    QJsonArray items;
+    QJsonArray characters;
+    QJsonArray environments;
+    QJsonArray backgrounds;
+
+    for(auto nBlock : vBlocks)
+    {
+        QJsonObject block;
+        QJsonObject position;
+        block["blockType"] = nBlock->getBlockType();
+        position["x"] = (int)(nBlock->pos().x()/accumulatedScale)+(nBlock->getImage().width()/2);
+        position["y"] = (int)(nBlock->pos().y()/accumulatedScale)+(nBlock->getImage().height());
+        block["position"] = position;
+        block["isContainingItem"] = nBlock->isContainingItem();
+
+        blocks.push_back(block);
+    }
+
+    for(auto nItem : vItems)
+    {
+        QJsonObject item;
+        QJsonObject position;
+        item["itemType"] = nItem->getItemType();
+        position["x"] = (int)(nItem->pos().x()/accumulatedScale)+(nItem->getImage().width()/2);
+        position["y"] = (int)(nItem->pos().y()/accumulatedScale)+(nItem->getImage().height());
+        item["position"] = position;
+
+        items.push_back(item);
+    }
+
+    for(auto nCharacter : vCharacters)
+    {
+        QJsonObject character;
+        QJsonObject position;
+        character["characterType"] = nCharacter->getCharacterType();
+        position["x"] = (int)(nCharacter->pos().x()/accumulatedScale)+(nCharacter->getImage().width()/2);
+        position["y"] = (int)(nCharacter->pos().y()/accumulatedScale)+(nCharacter->getImage().height());
+        character["position"] = position;
+
+        characters.push_back(character);
+    }
+
+    for(auto nEnvironment : vEnvironments)
+    {
+        QJsonObject environment;
+        QJsonObject position;
+        QString name = nEnvironment->getEnvironmentType();
+        environment["characterType"] = name;
+        position["x"] = (int)(nEnvironment->pos().x()/accumulatedScale)+(nEnvironment->getImage().width()/2);
+        position["y"] = (int)(nEnvironment->pos().y()/accumulatedScale)+(nEnvironment->getImage().height());
+        environment["position"] = position;
+        if(name.contains("Cloud")||name.contains("Bush")||name.contains("Mountain"))
+        {
+            backgrounds.push_back(environment);
+        }
+        else
+        {
+            environments.push_back(environment);
+        }
+    }
+
+    json["blocks"] = blocks;
+    json["items"] = items;
+    json["characters"] = characters;
+    json["environments"] = environments;
+    json["backgrounds"] = backgrounds;
 }

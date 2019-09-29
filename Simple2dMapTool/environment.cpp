@@ -29,6 +29,16 @@ Environment &Environment::operator=(const Environment &other)
     return *this;
 }
 
+QString Environment::getEnvironmentType() const
+{
+    return EnvironmentType;
+}
+
+QPixmap Environment::getImage() const
+{
+    return image;
+}
+
 
 void Environment::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {

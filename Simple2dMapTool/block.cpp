@@ -41,6 +41,21 @@ void Block::setItemType(const QString &itemType)
     ItemType = itemType;
 }
 
+QString Block::getBlockType() const
+{
+    return BlockType;
+}
+
+QPixmap Block::getImage() const
+{
+    return image;
+}
+
+bool Block::isContainingItem() const
+{
+   return bIsContainingItem;
+}
+
 QRectF Block::boundingRect() const
 {
 //    return QGraphicsObject::boundingRect();

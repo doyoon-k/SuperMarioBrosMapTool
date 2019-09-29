@@ -11,6 +11,8 @@ public:
     Character(const QString& type, const QPixmap& img, QGraphicsItem* parent = nullptr);
     Character(const Character& other);
     Character& operator= (const Character& other);
+    QString getCharacterType()const;
+    QPixmap getImage()const;
 private:
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr)override;

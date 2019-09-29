@@ -26,6 +26,16 @@ Character &Character::operator=(const Character &other)
     return *this;
 }
 
+QString Character::getCharacterType() const
+{
+    return CharacterType;
+}
+
+QPixmap Character::getImage() const
+{
+    return image;
+}
+
 void Character::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
     Q_UNUSED(option);

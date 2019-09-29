@@ -17,6 +17,9 @@ public:
     {}
     void setbIsContainingItem(bool val);
     void setItemType(const QString& itemType);
+    QString getBlockType()const;
+    QPixmap getImage()const;
+    bool isContainingItem()const;
 private:
 
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr)override;

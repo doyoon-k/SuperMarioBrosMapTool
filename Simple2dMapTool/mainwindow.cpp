@@ -136,17 +136,30 @@ void MainWindow::on_add_Environment_pushButton_clicked()
 
 void MainWindow::on_save_Map_Button_clicked()
 {
-   QString saveFolderPath = QFileDialog::getExistingDirectory(this,"Choose a file to save the data.","C://");
-   QFile saveFile(saveFolderPath);;
+    QGraphicsPixmapItem* p_bgImage = ui->mapScreen->getBackgroundPixmapItem();
+    if(p_bgImage == nullptr)
+    {
+        QMessageBox::information(this,"Background is not set.","You need to set the background first!");
+        return;
+    }
 
+   QString saveFolderPath = QFileDialog::getSaveFileName(this,"Choose a file to save the data.","C://","JSON (*.json)");
    if(saveFolderPath == "")
    {
        QMessageBox::information(this,"No folder selected.","You didn't select any folder.");
        return;
    }
+//   saveFolderPath.append("/mapData.json");
+   QFile saveFile(saveFolderPath);
+//   QFile saveFile(QStringLiteral("E:/Digipen/MasterCopy/mapData.json"));
 
-   QJsonObject mapData;
-   //code of writing on mapData
+   if (!saveFile.open(QIODevice::WriteOnly)) {
+       qWarning("Couldn't open save file.");
+   }
+
+   QJsonObject mapData; 
+   ui->mapScreen->writeMapDataToJsonObject(mapData);
+
    QJsonDocument saveDoc(mapData);
    saveFile.write(saveDoc.toJson());
 }

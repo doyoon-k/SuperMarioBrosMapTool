@@ -11,6 +11,8 @@ public:
     Environment(const QString& type,const QPixmap& img, QGraphicsItem* parent = nullptr);
     Environment(const Environment& other);
     Environment& operator= (const Environment& other);
+    QString getEnvironmentType()const;
+    QPixmap getImage()const;
 private:
 
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr)override;

@@ -12,6 +12,8 @@ public:
     Item(const QString& type,const QPixmap& img, QGraphicsItem* parent = nullptr);
     Item(const Item& other);
     Item& operator=(const Item& other);
+    QString getItemType()const;
+    QPixmap getImage()const;
 private:
     void paint(QPainter* painter,const QStyleOptionGraphicsItem* option, QWidget* widget = nullptr)override;
     QRectF boundingRect()const override;

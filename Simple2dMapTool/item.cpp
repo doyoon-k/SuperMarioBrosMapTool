@@ -21,6 +21,16 @@ Item::Item(const Item &other)
 
 }
 
+QString Item::getItemType() const
+{
+    return ItemType;
+}
+
+QPixmap Item::getImage() const
+{
+    return image;
+}
+
 void Item::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
 
