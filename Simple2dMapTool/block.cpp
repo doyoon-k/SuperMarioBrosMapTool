@@ -41,6 +41,11 @@ void Block::setItemType(const QString &itemType)
     ItemType = itemType;
 }
 
+QString Block::getItemType() const
+{
+    return ItemType;
+}
+
 QString Block::getBlockType() const
 {
     return BlockType;

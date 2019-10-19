@@ -17,6 +17,7 @@ public:
     {}
     void setbIsContainingItem(bool val);
     void setItemType(const QString& itemType);
+    QString getItemType()const;
     QString getBlockType()const;
     QPixmap getImage()const;
     bool isContainingItem()const;

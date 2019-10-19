@@ -25,79 +25,160 @@
      </item>
      <item>
       <widget class="QListWidget" name="environment_List_listWidget">
+       <property name="minimumSize">
+        <size>
+         <width>600</width>
+         <height>600</height>
+        </size>
+       </property>
        <item>
         <property name="text">
          <string>Pirhana Plant Pipe</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Piranha Plant Pipe.png</normalon>
+         </iconset>
         </property>
        </item>
        <item>
         <property name="text">
          <string>Pipe Head(Horizontal)</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Pipe Head Hor.png</normalon>
+         </iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>Pipe Head(Vertical)</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Pipe Head Ver.png</normalon>
+         </iconset>
         </property>
        </item>
        <item>
         <property name="text">
          <string>Pipe Body(Horizontal)</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Pipe Body Hor.png</normalon>
+         </iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>Pipe Body(Vertical)</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Pipe Body Ver.png</normalon>
+         </iconset>
         </property>
        </item>
        <item>
         <property name="text">
          <string>Flag</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Flag.png</normalon>
+         </iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>Cloud1</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Cloud1.png</normalon>
+         </iconset>
         </property>
        </item>
        <item>
         <property name="text">
          <string>Cloud2</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Cloud2.png</normalon>
+         </iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>Cloud3</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Cloud3.png</normalon>
+         </iconset>
         </property>
        </item>
        <item>
         <property name="text">
          <string>Bush1</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Bush1.png</normalon>
+         </iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>Bush2</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Bush2.png</normalon>
+         </iconset>
         </property>
        </item>
        <item>
         <property name="text">
          <string>Bush3</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Bush3.png</normalon>
+         </iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>Castle</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Castle.png</normalon>
+         </iconset>
         </property>
        </item>
        <item>
         <property name="text">
          <string>Lift</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Lift.png</normalon>
+         </iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>Mountain</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Mountain.png</normalon>
+         </iconset>
         </property>
        </item>
       </widget>

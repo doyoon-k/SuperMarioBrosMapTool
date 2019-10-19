@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>246</width>
-    <height>218</height>
+    <width>600</width>
+    <height>600</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>600</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -29,40 +41,95 @@
         <property name="text">
          <string>Ground</string>
         </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Mushroom</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Coin</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Star</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Hidden</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Questionmark</string>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/GroundBlock.png</normalon>
+         </iconset>
         </property>
        </item>
        <item>
         <property name="text">
          <string>Brick</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/BrickBlock.png</normalon>
+         </iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Coin Brick</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Coin Brick.png</normalon>
+         </iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>PowerUp Brick</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/PowerUp Brick.png</normalon>
+         </iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Star Brick</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Star Brick.png</normalon>
+         </iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Questionmark Coin</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Question Coin.png</normalon>
+         </iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Questionmark PowerUp</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Questionmark Power Up.png</normalon>
+         </iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Hidden QuestionMark</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Hidden QuestionMark.png</normalon>
+         </iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Questionmark Star</string>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>Hard</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/HardBlock.png</normalon>
+         </iconset>
         </property>
        </item>
       </widget>

@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/Img">
+        <file>Img/1-Up Mushroom.png</file>
+        <file>Img/BrickBlock.png</file>
+        <file>Img/Bush1.png</file>
+        <file>Img/Bush2.png</file>
+        <file>Img/Bush3.png</file>
+        <file>Img/Castle.png</file>
+        <file>Img/Cloud1.png</file>
+        <file>Img/Cloud2.png</file>
+        <file>Img/Cloud3.png</file>
+        <file>Img/Coin Brick.png</file>
+        <file>Img/Coin.png</file>
+        <file>Img/Fireflower.png</file>
+        <file>Img/Flag.png</file>
+        <file>Img/Green Koopa Troopa.png</file>
+        <file>Img/GroundBlock.png</file>
+        <file>Img/Gumba.png</file>
+        <file>Img/HardBlock.png</file>
+        <file>Img/Hidden QuestionMark.png</file>
+        <file>Img/Lift.png</file>
+        <file>Img/Mario.png</file>
+        <file>Img/Mountain.png</file>
+        <file>Img/Mushroom.png</file>
+        <file>Img/Pipe Body Hor.png</file>
+        <file>Img/Pipe Body Ver.png</file>
+        <file>Img/Pipe Head Hor.png</file>
+        <file>Img/Pipe Head Ver.png</file>
+        <file>Img/Piranha Plant Pipe.png</file>
+        <file>Img/Piranha Plant.png</file>
+        <file>Img/PowerUp Brick.png</file>
+        <file>Img/Question Coin.png</file>
+        <file>Img/Questionmark Power Up.png</file>
+        <file>Img/Red Koopa Troopa.png</file>
+        <file>Img/Star Brick.png</file>
+        <file>Img/Star.png</file>
+    </qresource>
+</RCC>

@@ -123,29 +123,33 @@ void MapScreen::mousePressEvent(QMouseEvent *event)
             {
                 addBlocks("GroundBlock",QPixmap(":/Img/Img/GroundBlock.png"));
             }
-            else if(tmpItemName == "Hidden")
+            else if(tmpItemName == "PowerUp Brick")
             {
-                addBlocks("HiddenBlock",QPixmap(":/Img/Img/HiddenBlock.png"));
+                addBlocks("PowerUp Brick",QPixmap(":/Img/Img/PowerUp Brick.png"));
             }
-            else if(tmpItemName == "Mushroom")
+            else if(tmpItemName == "Coin Brick")
             {
-                addBlocks("MushroomBlock",QPixmap(":/Img/Img/Mushroom Block.png"));
+                addBlocks("Coin Brick",QPixmap(":/Img/Img/Coin Brick.png"));
             }
-            else if(tmpItemName == "Coin")
+            else if(tmpItemName == "Star Brick")
             {
-                addBlocks("CoinBlock",QPixmap(":/Img/Img/Coin Block.png"));
-            }
-            else if(tmpItemName == "Star")
-            {
-                addBlocks("StarBlock",QPixmap(":/Img/Img/Star Block.png"));
-            }
-            else if(tmpItemName == "Questionmark")
-            {
-                addBlocks("QuestionMarkBlock",QPixmap(":/Img/Img/QuestionBlock.png"));
+                addBlocks("Star Brick",QPixmap(":/Img/Img/Star Brick.png"));
             }
             else if(tmpItemName == "Brick")
             {
                 addBlocks("BrickBlock",QPixmap(":/Img/Img/BrickBlock.png"));
+            }
+            else if(tmpItemName == "Questionmark Coin")
+            {
+                addBlocks("Questionmark Coin",QPixmap(":/Img/Img/Question Coin.png"));
+            }
+            else if(tmpItemName == "Questionmark PowerUp")
+            {
+                addBlocks("Questionmark PowerUp",QPixmap(":/Img/Img/Questionmark Power Up.png"));
+            }
+            else if(tmpItemName == "Hidden QuestionMark")
+            {
+                addBlocks("Hidden QuestionMark",QPixmap(":/Img/Img/Hidden QuestionMark.png"));
             }
             else if(tmpItemName == "Hard")
             {
@@ -179,9 +183,9 @@ void MapScreen::mousePressEvent(QMouseEvent *event)
             {
                 addCharacters("Mario",QPixmap(":/Img/Img/Mario.png"));
             }
-            else if(tmpItemName == "Gumba")
+            else if(tmpItemName == "Goomba")
             {
-                addCharacters("Gumba",QPixmap(":/Img/Img/Gumba.png"));
+                addCharacters("Goomba",QPixmap(":/Img/Img/Gumba.png"));
             }
             else if(tmpItemName == "Green Koopa Troopa")
             {
@@ -268,25 +272,36 @@ void MapScreen::addBlocks(const QString &name, const QPixmap &image)
         block->setPos(item->pos());
         block->setScale(item->scale());
         block->setObjectName(name);
-        if(name == "HiddenBlock")
+
+        if(name == "PowerUp Brick")
         {
             block->setbIsContainingItem(true);
-            block->setItemType("1-Up Mushroom");
+            block->setItemType("Power Up");
         }
-        else if(name == "MushroomBlock")
-        {
-            block->setbIsContainingItem(true);
-            block->setItemType("Mushroom");
-        }
-        else if(name == "CoinBlock")
+        else if(name == "Coin Brick")
         {
             block->setbIsContainingItem(true);
             block->setItemType("Coin");
         }
-        else if(name == "StarBlock")
+        else if(name == "Star Brick")
         {
             block->setbIsContainingItem(true);
             block->setItemType("Star");
+        }
+        else if(name == "Questionmark Coin")
+        {
+            block->setbIsContainingItem(true);
+            block->setItemType("Coin");
+        }
+        else if(name == "Questionmark PowerUp")
+        {
+            block->setbIsContainingItem(true);
+            block->setItemType("Power Up");
+        }
+        else if(name == "Hidden QuestionMark")
+        {
+            block->setbIsContainingItem(true);
+            block->setItemType("1-Up Mushroom");
         }
         vBlocks.push_back(block);
         p_mapScene->addItem(block);
@@ -392,10 +407,19 @@ void MapScreen::writeMapDataToJsonObject(QJsonObject &json)
         QJsonObject block;
         QJsonObject position;
         block["blockType"] = nBlock->getBlockType();
-        position["x"] = (int)(nBlock->pos().x()/accumulatedScale)+(nBlock->getImage().width()/2);
-        position["y"] = (int)(nBlock->pos().y()/accumulatedScale)+(nBlock->getImage().height());
+        position["x"] = round(nBlock->pos().x()/accumulatedScale)+(nBlock->getImage().width()/2);
+        position["y"] = round(nBlock->pos().y()/accumulatedScale)+(nBlock->getImage().height());
         block["position"] = position;
         block["isContainingItem"] = nBlock->isContainingItem();
+        if(nBlock->isContainingItem())
+        {
+            block["ItemType"] = nBlock->getItemType();
+        }
+        else
+        {
+            block["ItemType"] = "No Item";
+        }
+
 
         blocks.push_back(block);
     }
@@ -405,8 +429,8 @@ void MapScreen::writeMapDataToJsonObject(QJsonObject &json)
         QJsonObject item;
         QJsonObject position;
         item["itemType"] = nItem->getItemType();
-        position["x"] = (int)(nItem->pos().x()/accumulatedScale)+(nItem->getImage().width()/2);
-        position["y"] = (int)(nItem->pos().y()/accumulatedScale)+(nItem->getImage().height());
+        position["x"] = round(nItem->pos().x()/accumulatedScale)+(nItem->getImage().width()/2);
+        position["y"] = round(nItem->pos().y()/accumulatedScale)+(nItem->getImage().height());
         item["position"] = position;
 
         items.push_back(item);
@@ -417,8 +441,8 @@ void MapScreen::writeMapDataToJsonObject(QJsonObject &json)
         QJsonObject character;
         QJsonObject position;
         character["characterType"] = nCharacter->getCharacterType();
-        position["x"] = (int)(nCharacter->pos().x()/accumulatedScale)+(nCharacter->getImage().width()/2);
-        position["y"] = (int)(nCharacter->pos().y()/accumulatedScale)+(nCharacter->getImage().height());
+        position["x"] = round(nCharacter->pos().x()/accumulatedScale)+(nCharacter->getImage().width()/2);
+        position["y"] = round(nCharacter->pos().y()/accumulatedScale)+(nCharacter->getImage().height());
         character["position"] = position;
 
         characters.push_back(character);
@@ -429,16 +453,17 @@ void MapScreen::writeMapDataToJsonObject(QJsonObject &json)
         QJsonObject environment;
         QJsonObject position;
         QString name = nEnvironment->getEnvironmentType();
-        environment["characterType"] = name;
-        position["x"] = (int)(nEnvironment->pos().x()/accumulatedScale)+(nEnvironment->getImage().width()/2);
-        position["y"] = (int)(nEnvironment->pos().y()/accumulatedScale)+(nEnvironment->getImage().height());
+        position["x"] = round(nEnvironment->pos().x()/accumulatedScale)+(nEnvironment->getImage().width()/2);
+        position["y"] = round(nEnvironment->pos().y()/accumulatedScale)+(nEnvironment->getImage().height());
         environment["position"] = position;
         if(name.contains("Cloud")||name.contains("Bush")||name.contains("Mountain"))
         {
+            environment["backgroundType"] = name;
             backgrounds.push_back(environment);
         }
         else
         {
+            environment["environmentType"] = name;
             environments.push_back(environment);
         }
     }

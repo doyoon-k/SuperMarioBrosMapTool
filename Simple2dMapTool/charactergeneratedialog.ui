@@ -25,24 +25,50 @@
      </item>
      <item>
       <widget class="QListWidget" name="character_Type_listWidget">
+       <property name="minimumSize">
+        <size>
+         <width>600</width>
+         <height>600</height>
+        </size>
+       </property>
        <item>
         <property name="text">
          <string>Mario</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Mario.png</normalon>
+         </iconset>
+        </property>
        </item>
        <item>
         <property name="text">
-         <string>Gumba</string>
+         <string>Goomba</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Gumba.png</normalon>
+         </iconset>
         </property>
        </item>
        <item>
         <property name="text">
          <string>Green Koopa Troopa</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Green Koopa Troopa.png</normalon>
+         </iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>Red Koopa Troopa</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Red Koopa Troopa.png</normalon>
+         </iconset>
         </property>
        </item>
       </widget>

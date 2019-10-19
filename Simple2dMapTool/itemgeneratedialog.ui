@@ -25,29 +25,60 @@
      </item>
      <item>
       <widget class="QListWidget" name="item_Type_listWidget">
+       <property name="minimumSize">
+        <size>
+         <width>600</width>
+         <height>600</height>
+        </size>
+       </property>
        <item>
         <property name="text">
          <string>Coin</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Coin.png</normalon>
+         </iconset>
         </property>
        </item>
        <item>
         <property name="text">
          <string>Mushroom</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Mushroom.png</normalon>
+         </iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>1-Up Mushroom</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/1-Up Mushroom.png</normalon>
+         </iconset>
         </property>
        </item>
        <item>
         <property name="text">
          <string>Star</string>
         </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Star.png</normalon>
+         </iconset>
+        </property>
        </item>
        <item>
         <property name="text">
          <string>Fire Flower</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normalon>:/Img/Img/Fireflower.png</normalon>
+         </iconset>
         </property>
        </item>
       </widget>

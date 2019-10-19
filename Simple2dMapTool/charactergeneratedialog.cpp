@@ -29,7 +29,7 @@ void CharacterGenerateDialog::on_character_Generate_pushButton_clicked()
     {
         item = p_mapScene->addRect(0,0,one_block_length,one_block_length);
     }
-    else if(characterType == "Gumba")
+    else if(characterType == "Goomba")
     {
         item = p_mapScene->addRect(0,0,one_block_length,one_block_length);
     }

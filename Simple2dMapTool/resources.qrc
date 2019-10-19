@@ -3,11 +3,11 @@
         <file>Img/BrickBlock.png</file>
         <file>Img/GroundBlock.png</file>
         <file>Img/HardBlock.png</file>
-        <file>Img/QuestionBlock.png</file>
+        <file>Img/Question Coin.png</file>
         <file>Img/Coin.png</file>
         <file>Img/Fireflower.png</file>
         <file>Img/Gumba.png</file>
-        <file>Img/HiddenBlock.png</file>
+        <file>Img/Hidden QuestionMark.png</file>
         <file>Img/Mushroom.png</file>
         <file>Img/Star.png</file>
         <file>Img/1-Up Mushroom.png</file>
@@ -15,9 +15,6 @@
         <file>Img/Piranha Plant.png</file>
         <file>Img/Red Koopa Troopa.png</file>
         <file>Img/Mario.png</file>
-        <file>Img/Coin Block.png</file>
-        <file>Img/Mushroom Block.png</file>
-        <file>Img/Star Block.png</file>
         <file>Img/Bush1.png</file>
         <file>Img/Bush2.png</file>
         <file>Img/Bush3.png</file>
@@ -33,5 +30,9 @@
         <file>Img/Pipe Head Hor.png</file>
         <file>Img/Pipe Head Ver.png</file>
         <file>Img/Mountain.png</file>
+        <file>Img/PowerUp Brick.png</file>
+        <file>Img/Coin Brick.png</file>
+        <file>Img/Star Brick.png</file>
+        <file>Img/Questionmark Power Up.png</file>
     </qresource>
 </RCC>
